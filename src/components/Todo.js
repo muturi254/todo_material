@@ -2,7 +2,7 @@ import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import { Box, Card, CardContent, Typography } from "@mui/material";
 import React from "react";
 
-const Todo = ({todo}) => {
+const Todo = ({todo, onClick}) => {
     return (
         <Box sx={{
             marginBottom: 2
@@ -22,7 +22,7 @@ const Todo = ({todo}) => {
                         alignItems: 'center',
                     }}>
                         <Typography>{todo.name}</Typography>
-                        <DeleteOutlineIcon color='error' />
+                        <DeleteOutlineIcon color='error' onClick={() => onClick(todo.id)}/>
                     </Box>
                 </CardContent>
             </Card>
